@@ -36,7 +36,7 @@ function App() {
     setMessages([
       {
         role: "bot",
-        text: "Hi! I'm Naru 👋 Your networking assistant. Ask me anything about WiFi, DNS, routers, or connectivity issues. I also learn from solutions that work for you!",
+        text: "Hi! I'm Sage 👋 Your networking assistant. Ask me anything about WiFi, DNS, routers, or connectivity issues. I also learn from solutions that work for you!",
       },
     ]);
   }, []);
@@ -143,7 +143,7 @@ function App() {
         <div className="header-left">
           <div className="avatar">N</div>
           <div>
-            <div className="bot-name">Naru</div>
+            <div className="bot-name">Sage</div>
             <div className="bot-status">● Online</div>
           </div>
         </div>
@@ -163,9 +163,9 @@ function App() {
                 <button
                   className="solved-btn"
                   onClick={() => openLearnPanel(msg.question)}
-                  title="Tell Naru what actually solved your problem"
+                  title="Tell Sage what actually solved your problem"
                 >
-                  ✅ I solved it differently — teach Naru!
+                  ✅ I solved it differently — teach Sage!
                 </button>
               )}
             </div>
@@ -203,7 +203,7 @@ function App() {
       {learnMode && (
         <div className="learn-panel">
           <div className="learn-header">
-            <span>🧠 Teach Naru what worked</span>
+            <span>🧠 Teach Sage what worked</span>
             <button className="close-btn" onClick={() => setLearnMode(false)}>✕</button>
           </div>
           <div className="learn-body">
@@ -228,7 +228,7 @@ function App() {
               onClick={submitLearn}
               disabled={learnLoading || !learnSolution.trim()}
             >
-              {learnLoading ? "Saving..." : learnSuccess ? "✅ Saved!" : "Save & Teach Naru"}
+              {learnLoading ? "Saving..." : learnSuccess ? "✅ Saved!" : "Save & Teach Sage"}
             </button>
           </div>
         </div>

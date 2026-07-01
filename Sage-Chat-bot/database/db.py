@@ -8,7 +8,7 @@ import mysql.connector
 from mysql.connector import pooling
 
 _pool = pooling.MySQLConnectionPool(
-    pool_name="naru_pool",
+    pool_name="Sage_pool",
     pool_size=5,
     host="localhost",
     port=3307,          # change if your MySQL runs on 3306

@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 @app.route("/")
 def home():
-    return "Naru Chatbot is running"
+    return "Sage Chatbot is running"
 
 
 # ─────────────────────────────────────────────

@@ -47,7 +47,7 @@ def small_talk_node(state: ChatState) -> ChatState:
 
     if any(g in last_msg for g in ["hi", "hello", "hey"]):
         reply = (
-            "Hi! I'm Naru, your networking assistant. "
+            "Hi! I'm Sage, your networking assistant. "
             "Ask me anything about WiFi, DNS, routers, or connectivity issues!"
         )
     elif any(t in last_msg for t in ["thanks", "thank you"]):
@@ -56,7 +56,7 @@ def small_talk_node(state: ChatState) -> ChatState:
         reply = "Goodbye! Come back anytime you have networking questions."
     elif any(w in last_msg for w in ["who are you", "what are you"]):
         reply = (
-            "I'm Naru, an AI-powered networking chatbot. "
+            "I'm Sage, an AI-powered networking chatbot. "
             "I can help you troubleshoot connectivity issues, explain networking concepts, "
             "and I even learn from solutions that work for you!"
         )
@@ -89,7 +89,7 @@ def rag_node(state: ChatState) -> ChatState:
     # 3. Build conversation history string (last 6 turns)
     history_msgs = state["messages"][:-1][-6:]
     history_str = "\n".join(
-        f"{'User' if isinstance(m, HumanMessage) else 'Naru'}: {m.content}"
+        f"{'User' if isinstance(m, HumanMessage) else 'Sage'}: {m.content}"
         for m in history_msgs
     )
 
@@ -105,7 +105,7 @@ IMPORTANT: When answering, include the community-reported solutions above as
 additional steps or alternatives. Label them clearly as "✅ Also works (user-reported fix):".
 """
 
-    prompt = f"""You are Naru, an expert networking assistant.
+    prompt = f"""You are Sage, an expert networking assistant.
 Use the knowledge base and conversation history below to answer the user's question.
 Be clear, structured, and practical. Use numbered steps for troubleshooting.
 

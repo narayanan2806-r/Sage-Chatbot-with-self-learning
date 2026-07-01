@@ -1,4 +1,4 @@
-# Naru — Networking Chatbot (with Self-Learning)
+# Sage — Networking Chatbot (with Self-Learning)
 
 A stateful networking assistant powered by **LangGraph + Ollama (Llama 3.1 8B)** with a React UI, MySQL chat history, and a **self-learning feature** that lets the chatbot learn from solutions users report.
 
@@ -8,15 +8,15 @@ A stateful networking assistant powered by **LangGraph + Ollama (Llama 3.1 8B)**
 
 When the chatbot gives troubleshooting steps and the user finds a **different solution** on their own, they can click:
 
-> **✅ I solved it differently — teach Naru!**
+> **✅ I solved it differently — teach Sage!**
 
-A panel slides up where the user describes what they actually did. Naru:
+A panel slides up where the user describes what they actually did. Sage:
 1. Extracts a topic tag using the LLM
 2. Saves the solution to `backend/dataset/learned_solutions.csv`
 3. Rebuilds the FAISS vector index in real-time
 4. Saves to MySQL (`learned_solutions` table)
 
-From that point on, whenever a **similar question** is asked, Naru retrieves the user-reported fix and includes it in its answer, labelled clearly as:
+From that point on, whenever a **similar question** is asked, Sage retrieves the user-reported fix and includes it in its answer, labelled clearly as:
 
 > **✅ Also works (user-reported fix):** ...
 
@@ -58,7 +58,7 @@ Browser (React + Vite)
 ## Project Structure
 
 ```
-Naru-Chat-bot/
+Sage-Chat-bot/
 ├── app.py                               # Flask entry point
 ├── .env                                 # Ollama config
 ├── requirements.txt
@@ -119,8 +119,8 @@ Edit `database/db.py` with your credentials.
 ### 3. Backend
 
 ```bash
-conda create -n naru_bot python=3.12
-conda activate naru_bot
+conda create -n Sage_bot python=3.12
+conda activate Sage_bot
 pip install -r requirements.txt
 python app.py
 ```
@@ -177,7 +177,7 @@ User asks: "My internet is not connecting"
 Bot gives steps 1, 2, 3...
 
 User tries something else → it works!
-User clicks: ✅ I solved it differently — teach Naru!
+User clicks: ✅ I solved it differently — teach Sage!
 
 User types: "I unplugged the modem for 30 seconds and it worked"
            → Saved to learned_solutions.csv + FAISS rebuilt
